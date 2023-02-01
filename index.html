@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Meu Pet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/meupet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/iconlogomeupet.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <nav>
+    <div class="menu-icon">
+      <span class="fas fa-bars"></span>
+    </div>
+    <div class="logo">
+      <span style="color: #1e232b; font-weight: 800;">Meu</span><span
+        style="color: #175EA8;  font-weight: 800;">Pet</span>
+    </div>
+    <div class="nav-items">
+      <li><a href="index.html" style="font-weight:900">Início</a></li>
+      <li><a href="produtos.html" style="font-weight:900">Produtos</a></li>
+      <li><a href="sobrenos.html" style="font-weight:900">Sobre Nós</a></li>
+      <li><a href="cadastro.html" style="font-weight:900">Cadastro</a></li>
+    </div>
+    <div class="search-icon">
+      <span class="fas fa-search"></span>
+    </div>
+    <div class="cancel-icon">
+      <span class="fas fa-times"></span>
+    </div>
+    <form action="#">
+      <input type="search" class="search-data" placeholder="Pesquisar" style="background-color: white;" required>
+      <button type="submit" class="fas fa-search"></button>
+    </form>
+  </nav>
+  <script>
+    const menuBtn = document.querySelector(".menu-icon span");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const items = document.querySelector(".nav-items");
+    const form = document.querySelector("form");
+    menuBtn.onclick = () => {
+      items.classList.add("active");
+      menuBtn.classList.add("hide");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+    }
+    cancelBtn.onclick = () => {
+      items.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      searchBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      form.classList.remove("active");
+      cancelBtn.style.color = "#ff3d00";
+    }
+    searchBtn.onclick = () => {
+      form.classList.add("active");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+    }
+  </script>
+
+
+  <div style="transform: translate(-50%, -50%); left: 50%; position: absolute; margin-top: 15px;">
+    <span style="font-family:arial; color:#175EA8;font-size:2vh;margin: auto; display: block; text-align: center;">Para
+      ativar o modo Alto Contraste, pressione
+      <span style="font-family: arial black;">"Enter".</span></span>
+  </div>
+
+  <div class="layout">
+    <section class="carousel" style="width: 100%; margin: auto; padding-top: 30px; z-index: 1;">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="img/imgcarousel1.png" class="imgcarousel" style="width:100%; border-radius: 20px; z-index: 1;">
+          <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <image src="img/imgcarousel2.jpeg" class="imgcarousel" style="width:100%; border-radius: 20px; z-index: 1;">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="img/imgcarousel3.png" class="imgcarousel" style="width:100%; border-radius: 20px;  z-index: 1;">
+          <div class="text"></div>
+        </div>
+      </div>
+      <br>
+      <div style="text-align:center">
+        <span class="dot" style="opacity: 0;"></span>
+        <span class="dot" style="opacity: 0;"></span>
+        <span class="dot" style="opacity: 0;"></span>
+      </div>
+      <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {
+            slideIndex = 1
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+          setTimeout(showSlides, 3500); // Mudar imagem a cada 3.5 segundos
+        }
+      </script>
+    </section>
+    <section class="container1" style=>
+      <!--Container 1-->
+      <div class="recomendados" style="width: 100%; height:auto;">
+        <div style="width:auto; height:auto;">
+          <img src="img/logomeupet.png" alt="" style="width:15%; margin: auto; display: block;">
+        </div>
+        <div style="padding-top: 10px; padding-bottom: 10px; width: 100%;">
+          <p class="recomendacao">Produtos recomendados para <span
+              style="color: #ffffff; font-weight:900; text-decoration: underline solid #175EA8; background-color: #175EA8; border-radius: 10px; width: auto;box-sizing: border-box; padding: 3px;">você.</span>
+          </p>
+          <style>
+            @media (min-width:1460px) {
+              .recomendacao {
+                font-size: 2.5vh;
+              }
+            }
+
+            @media (min-width:1800px) {
+              .recomendacao {
+                font-size: 1vh;
+              }
+            }
+          </style>
+        </div>
+      </div>
+    </section>
+    <section class="container2">
+      <div class="container2section">
+        <div class="divcontainer2">
+
+          <div class="compras">
+
+            <img src="img/racao1.jpg" class="imgcontainer2">
+            <button class="comprar" role="button">Mais opções</button>
+            <h2 class="nomeracoes" style="padding-top: 10px;">Ração Seca Origens Premium Adultos Especial
+              Class</span><span class="reticencias">...</span></h2>
+            <span class="nomeracoes" style="font-family: arial black; padding-top:1vh; padding-bottom: 1vh;">R$
+              20,90</span>
+            <div class="promocaoborder">
+              <span CLASS="promocao">10% OFF</span>
+            </div>
+            <DIV>
+              <span class="precoracoes">R$ 18,81<BR><span class="paraassinantes">
+                  para assinantes</mark></span>
+            </div>
+          </div>
+        </div>
+        <div class="divcontainer2" role="button">
+          <div class="compras">
+            <img src="img/racao2.jfif" class="imgcontainer2">
+            <button class="comprar" role="button">Mais opções</button>
+            <h2 class="nomeracoes" style="padding-top: 10px;">Ração Golden Formula <span class="elipse">Cães Adultos
+                Raças Pequenas</span><span class="reticencias">...</span></h2>
+            <div style="margin-bottom: 1vh;width: 100%;height: auto;">
+              <span class="nomeracoes" style="font-family: arial black; padding-top:1vh; padding-bottom: 1vh;">R$
+                95,90</span>
+            </div>
+
+            <div class="promocaoborder">
+              <span CLASS="promocao">10% OFF</span>
+            </div>
+            <DIV>
+              <span class="precoracoes">R$ 86,30<BR><span class="paraassinantes">
+                  para assinantes</mark></span>
+            </div>
+          </div>
+        </div>
+        <div class="divcontainer2" role="button">
+          <div class="compras">
+            <img src="img/racao3.png" class="imgcontainer2">
+            <button class="comprar" role="button">Mais opções</button>
+            <h2 class="nomeracoes" style="padding-top: 10px;">Ração Pedigree Para Cães Adultos de Raças
+              Pequenas</span><span class="reticencias">...</span></h2>
+            <span class="nomeracoes" style="font-family: arial black; padding-top:1vh; padding-bottom: 1vh;">R$
+              76,90</span>
+            <div class="promocaoborder">
+              <span CLASS="promocao">10% OFF</span>
+            </div>
+            <DIV>
+              <span class="precoracoes">R$ 69,21<BR><span class="paraassinantes">
+                  para assinantes</mark></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+  </div>
+  </div>
+  </section>
+  <section class="container3">
+    <div STYLE="width: auto;margin: auto; height: auto; padding-top: 5vh;">
+      <p class="recomendacao" style="vertical-align:middle;">Marcas mais <span
+          style="color: #ffffff; font-weight:900; text-decoration: underline solid #175EA8; background-color: #175EA8; border-radius: 10px; width: auto;box-sizing: border-box; padding: 3px;">bem
+          avaliadas.</span></p>
+    </div>
+    <div style="text-align: center;">
+      <img src="img/marcas.png" class="imgmarcas">
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="left">
+      <h4 class="title-footer" style="color:black;
+         font-family:arial black;">Meu<span>Pet</span></h4>
+      <p class="links">
+
+        <a href="index.html" title="Home">Home</a>
+        <a href="produtos.html" title="Html">Produtos</a>
+        <a href="sobre.html" title="Css">Sobre nós</a>
+        <a href="cadastro.html" title="jQuery">Cadastro</a>
+      </p>
+      <p class="Copyright">Copyright &copy; 2023 Meu Pet - Todos os Direitos Reservados.</p>
+    </div>
+    <!--Left-->
+    <div class="right">
+      <h4 class="title-footer">Contato</h4>
+      <form action="#" method="post">
+        <input type="text" name="nome" placeholder="Nome" required="" />
+        <input type="email" name="email" placeholder="E-mail" required="" />
+        <input type="text" name="assunto" placeholder="Assunto" required="" />
+        <textarea name="mensagem" placeholder="Mensagem" required=""></textarea>
+        <button class="btn">Enviar</button>
+      </form>
+    </div>
+    <!--Right-->
+  </footer>
+
+
+  </div>
+
+  <script>
+    document.onkeypress = function (e) {
+      e = e || window.event
+
+      if (e.keyCode === 13) {
+        document.documentElement.classList.toggle("dark-mode")
+
+        document.querySelectorAll('.inverted').forEach(el.classList.toggle('invert'))
+      }
+    }
+  </script>
+
+</body>
+
+</html>
